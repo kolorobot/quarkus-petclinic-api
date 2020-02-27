@@ -17,21 +17,7 @@ docker run --name petclinic-dev -p 5433:5432 -e POSTGRES_DB=petclinic-dev -e POS
 - Run previously stopped container:
 
 ```
-docker start petclinic-dev
-```
-
-### Test database
-
-- Create and execute the container:
-
-```
-docker run --name petclinic-test -p 5434:5432 -e POSTGRES_DB=petclinic-test -e POSTGRES_USER=petclinic-test -e POSTGRES_PASSWORD=petclinic-test -d postgres:alpine
-```
-
-- Run previously stopped container:
-
-```
-docker start petclinic-test
+docker start petclinic-db-dev
 ```
 
 ### Prod database
@@ -39,13 +25,13 @@ docker start petclinic-test
 - Create and execute the container:
 
 ```
-docker run --name petclinic -p 5432:5432 -e POSTGRES_DB=petclinic -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -d postgres:alpine
+docker run -it --name petclinic-db -p 5432:5432 -e POSTGRES_DB=petclinic -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -d postgres:alpine
 ```
 
 - Run previously stopped container:
 
 ```
-docker start petclinic
+docker start petclinic-db
 ```
 
 ## Running the application in dev mode
@@ -53,20 +39,6 @@ docker start petclinic
 You can run your application in dev mode that enables live coding using:
 ```
 ./mvnw quarkus:dev
-```
-
-### Prod database
-
-- Create a new container for Postgres, and execute the container:
-
-```
-docker run --name petclinic -p 5432:5432 -e POSTGRES_DB=petclinic -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -d postgres:alpine
-```
-
-- Run previously stopped container:
-
-```
-docker start petclinic
 ```
 
 ## Packaging and running the application
