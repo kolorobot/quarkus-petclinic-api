@@ -125,8 +125,8 @@
                 <version>1.0</version>
                 <executions>
                     <execution>
-                        <id>copy-file</id>
-                        <phase>generate-sources</phase>
+                        <id>copy-eb-files</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -134,11 +134,11 @@
                             <fileSets>
                                 <fileSet>
                                     <sourceFile>src/main/resources/application-eb.properties</sourceFile>
-                                    <destinationFile>target/dist/application.properties</destinationFile>
+                                    <destinationFile>target/eb/application.properties</destinationFile>
                                 </fileSet>
                                 <fileSet>
                                     <sourceFile>src/main/docker/Dockerfile.eb</sourceFile>
-                                    <destinationFile>target/dist/Dockerfile</destinationFile>
+                                    <destinationFile>target/eb/Dockerfile</destinationFile>
                                 </fileSet>
                             </fileSets>
                         </configuration>
@@ -151,7 +151,7 @@
                 <version>3.2.0</version>
                 <configuration>
                     <descriptors>
-                        <descriptor>src/assembly/dist.xml</descriptor>
+                        <descriptor>src/assembly/eb.xml</descriptor>
                     </descriptors>
                 </configuration>
             </plugin>

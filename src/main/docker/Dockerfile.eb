@@ -7,15 +7,15 @@
 #
 # Then, build the image with:
 #
-# docker build -f src/main/docker/Dockerfile.eb -t quarkus/petclinic-api-jvm .
+# docker build -t quarkus/petclinic-api-jvm-eb .
 #
-# To locally run the container start the database:
+# Before running the container start the database:
 #
 # docker run -it --name petclinic-db -p 5432:5432 -e POSTGRES_DB=petclinic -e POSTGRES_USER=petclinic -e POSTGRES_PASSWORD=petclinic -d postgres:11.6-alpine
 #
 # Run the application passing RDS environment variables and link to the database container:
 #
-# docker run -i --rm -p 8080:5000 --link petclinic-db -e RDS_HOSTNAME=petclinic-db -e RDS_PORT=5432 -e RDS_DB_NAME=petclinic -e RDS_USERNAME=petclinic -e RDS_PASSWORD=petclinic quarkus/petclinic-api-jvm
+# docker run -i --rm -p 8080:5000 --link petclinic-db -e RDS_HOSTNAME=petclinic-db -e RDS_PORT=5432 -e RDS_DB_NAME=petclinic -e RDS_USERNAME=petclinic -e RDS_PASSWORD=petclinic quarkus/petclinic-api-jvm-eb
 #
 ###
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.1
