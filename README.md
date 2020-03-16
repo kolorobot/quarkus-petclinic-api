@@ -52,9 +52,9 @@ The application is now runnable using `java -jar target/quarkus-petclinic-api-1.
 
 This will create `zip` package with the `uber-jar`, `Dockerfile` and `config/application.properties`.
 
-- Upload `quarkus-petclinic-api-1.0.1-dist.zip` to AWS Elastic Beanstalk.
+- Upload `quarkus-petclinic-api-1.0.1-eb.zip` to AWS Elastic Beanstalk.
 
-> Note: See `src/main/docker/Dockerfile.eb` for more details.
+>Learn how to launch single container Docker environment with Quarkus based application on Elastic Beanstalk: https://blog.codeleak.pl/2020/03/deploy-quarkus-application-to-elastic-beanstalk.html
 
 ## Creating a native executable
 
